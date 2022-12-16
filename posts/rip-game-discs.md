@@ -4,6 +4,8 @@ title: "Ripping disc-based games for backup and emulation in 2022"
 date: "2022-10-17"
 ---
 
+# Platforms
+
 ## Sony PlayStation
 
 PlayStation emulators typically require the PlayStation disc image to be in a bin/cue format. The `.bin` file contains the binary content of the disc and the `.cue` contains directions for loading the data for the hardware reading the disc. In our case the hardware is virtualized within the emulator.
@@ -65,3 +67,55 @@ Now you should be able to load the game in your PSX emulator of choice by loadin
 #### L-EC errors
 
 If your disc is damaged, or even just has smudges on it, the ripping process may appear to go very slowly and not finish correctly. If you are seeing errors such as `WARNING: Found L-EC error at sector 814 - ignored` you may need to wipe your disc clean or try to repair any damages to it.
+
+# Converting to CHD
+
+I highly recommend converting any disc data to the `.chd` format to simplify your backups and save space with compression:
+
+https://retropie.org.uk/docs/CHD-files/
+
+> CHD is a lossless compression format originally developed for MAME, for the hard-drive contents of certain arcade machines. It has since been used in several other emulators as a means of storing CD-ROM game data. For CD-based games, it compresses the contents of a disc image (.cue + .bin files) to a single .chd file.
+
+`.chd` has great compatibility across the most popular emulators, I've been using it specifically with:
+
+- redream (Dreamcast)
+- flycast (Dreamcast)
+- Duckstation (PS1)
+- Yaba Sanshiro 2 (Saturn)
+
+## Setup
+
+Follow the guide posted above for installing `rom-tools` (macOS) or `mame-tools` (Linux). After installing a `chdman` command should be available:
+
+```
+$ chdman info
+chdman - MAME Compressed Hunks of Data (CHD) manager 0.242 (unknown)
+Error: Required parameters missing
+
+Usage:
+   chdman info [options], where valid options are:
+      --input, -i <filename>: input file name (required)
+      --verbose, -v: output additional information
+```
+
+`chdman` works with many filetypes but I've been using it specifically for PSX, Saturn, and Dreamcast backups. This includes `.bin/.cue` and `.gdi` formats.
+
+## .bin/.cue
+
+CUE files are plaintext files that define how the "tracks" of the disc are laid out. Opening a CUE file will show that its contents are simple: references to the other files in the disc and their index. The CHD docs provides examples on how to use the tool but I'll be reproducing those here. Pointing `chdman` at a `.cue` file will use this info to create the single `.chd` file:
+
+`chdman createcd -i <game.cue> -o <game.chd>`
+
+Alternatively you can convert many files in a single command like:
+
+`for i in *.cue; do chdman createcd -i "$i" -o "${i%.*}.chd"; done`
+
+## .gdi
+
+`chdman` works exactly the same with Dreamcast `.gdi` images, where instead of pointing at the `.cue` you reference the `.gdi` file:
+
+`chdman createcd -i <game.gdi> -o <game.chd>`
+
+Alternatively you can convert many files in a single command like:
+
+`for i in *.gdi; do chdman createcd -i "$i" -o "${i%.*}.chd"; done`
