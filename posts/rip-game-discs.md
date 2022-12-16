@@ -1,7 +1,7 @@
 ---
 id: "rip-game-discs"
 title: "Ripping disc-based games for backup and emulation in 2022"
-date: "2022-10-17"
+date: "2022-10-16"
 ---
 
 # Platforms
