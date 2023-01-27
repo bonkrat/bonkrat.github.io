@@ -1,8 +1,21 @@
+.articleHeader {
+  text-align: center;
+  padding: 1rem;
+}
+
 .title {
-    font-size: 2.5rem;
-    margin: 1rem 0;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-style: italic;
+}
+
+.date {
+  margin: 2rem 0;
 }
 
 .content {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }

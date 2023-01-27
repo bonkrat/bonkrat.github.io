@@ -1,11 +1,9 @@
-// components/layout.js
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 
-// import Footer from './footer'
-
 export default function Layout({ children }) {
+  const year = new Date().getFullYear();
   return (
     <>
       <Head>
@@ -28,9 +26,7 @@ export default function Layout({ children }) {
           <article>{children}</article>
         </main>
       </div>
-      <footer className={styles.footer}>
-        <Link href={"/"}>Copyright © 2022 ross.fyi</Link>
-      </footer>
+      <footer className={styles.footer}>Copyright © {year} ross.fyi</footer>
     </>
   );
 }

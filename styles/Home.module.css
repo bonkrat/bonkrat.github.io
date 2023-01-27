@@ -79,6 +79,27 @@
   max-width: 800px;
 }
 
+.articleList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.articleLink {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.articleLink a {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.articleLinkSubtitle {
+  font-style: italic;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

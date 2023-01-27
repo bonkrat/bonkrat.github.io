@@ -3,13 +3,13 @@ import { getAllPostData } from "../lib/posts";
 
 export default function Home({ allPostsData }) {
   return (
-      <ul>
-        {allPostsData.map(({ id, date, title }) => (
-          <li key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
-          </li>
-        ))}
-      </ul>
+    <ul>
+      {allPostsData.map(({ id, title }) => (
+        <li key={id}>
+          <Link href={`/posts/${id}`}>{title}</Link>
+        </li>
+      ))}
+    </ul>
   );
 }
 
