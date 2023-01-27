@@ -1,10 +1,31 @@
 ---
-id: "rip-game-discs"
-title: "Ripping disc-based games for backup and emulation in 2022"
-date: "2022-10-16"
+id: "ripping-games"
+title: "Ripping Games"
+subtitle: "How to rip, format, and archive game discs for emulation and preservation."
+date: "2023-01-27"
 ---
 
 # Platforms
+
+## Sega Saturn
+
+### Converting from MDF/MDS
+
+Some of my Sega Saturn discs are ripped as MDF (Media Descriptor File) and MDS (Media Descriptor Sidecar) filetypes. These are common as rips from Alcohol 120%, a classic Windows program used for ripping and burning discs. Some modern emulators do not handle these filetyles so it can be worthwhile to convert to other formats for compatibility. I've been targeting [Beetle Saturn](https://docs.libretro.com/library/beetle_saturn/) which is still maintained but does not support MDF/MDS.
+
+#### Converting to ISO
+
+First install [iat](https://github.com/ropery/iat), a free utility tool that can convert disc formats to ISO.
+
+In Ubuntu:
+
+`sudo apt-get install iat`
+
+Converting your MDF/MDS filepair is as simple as running the tool against the MDF file:
+
+`iat INPUT_FILE.mdf OUTPUTFILE.iso`
+
+Once it has completed you will have an ISO formatted disc file per your output argument. After this I would recommend converting to [CHD](#converting-to-chd).
 
 ## Sony PlayStation
 
@@ -100,7 +121,8 @@ https://retropie.org.uk/docs/CHD-files/
 - redream (Dreamcast)
 - flycast (Dreamcast)
 - Duckstation (PS1)
-- Yaba Sanshiro 2 (Saturn)
+- Yaba Sanshiro 2 (Sega Saturn)
+- Beetle Saturn (Sega Saturn)
 
 ## Setup
 
