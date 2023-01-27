@@ -1,10 +1,11 @@
 ---
 id: "rom-patching"
-title: "Applying patches to ROMs in Linux"
+title: "Rom Patching"
+subtitle: "Utilities for applying hacks, translations, and other patches to ROMs in Linux"
 date: "2022-12-14"
 ---
 
-Much of the information and utilities are out of date for applying patches to ROMs. If you're trying to apply a translation, hack, or modification as UPS files to a Gameboy Advance ROM you can follow these instructions.
+A lot of the information and utilities on the web for applying patches to ROMs is out of date. If you're trying to apply a translation, hack, or modification as UPS files to a GameBoy Advance ROM you can follow this guide.
 
 # Tools
 
