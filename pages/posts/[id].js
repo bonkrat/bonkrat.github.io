@@ -25,9 +25,7 @@ export default function Post({ postData }) {
       <header className={styles.articleHeader}>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.subtitle}>{postData.subtitle}</p>
-        <p className={styles.date}>
-          Updated <time className={styles.date}>{postData.date}</time>
-        </p>
+        Updated <time className={styles.date}>{postData.date}</time>
       </header>
       <p
         className={styles.content}

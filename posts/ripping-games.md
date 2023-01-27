@@ -5,8 +5,6 @@ subtitle: "How to rip, format, and archive game discs for emulation and preserva
 date: "2023-01-27"
 ---
 
-# Platforms
-
 ## Sega Saturn
 
 ### Converting from MDF/MDS

@@ -1,6 +1,5 @@
 .articleHeader {
-  text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .title {
@@ -17,5 +16,5 @@
 }
 
 .content {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
