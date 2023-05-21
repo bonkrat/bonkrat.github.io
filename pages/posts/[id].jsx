@@ -22,11 +22,11 @@ export async function getStaticPaths() {
 export default function Post({ postData }) {
   return (
     <>
-      <header className={styles.articleHeader}>
+      <h1 className={styles.articleHeader}>
         <h1 className={styles.title}>{postData.title}</h1>
         <p className={styles.subtitle}>{postData.subtitle}</p>
         Updated <time className={styles.date}>{postData.date}</time>
-      </header>
+      </h1>
       <p
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: postData.contentHtml }}

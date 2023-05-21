@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
+import Marquee from "../shared/marquee/marquee";
 
 export default function Layout({ children }) {
   const year = new Date().getFullYear();
@@ -18,15 +19,18 @@ export default function Layout({ children }) {
       </Head>
       <div className={styles.container}>
         <header className={styles.header}>
-          <h1 className={styles.title}>
-            <Link href={"/"}>ross.fyi</Link>
-          </h1>
+          <Marquee>
+            <span className={styles.title}>
+              <Link href={"/"}>ross.fyi</Link>
+            </span>
+          </Marquee>
         </header>
-        <main className={styles.main}>
-          <article>{children}</article>
-        </main>
+        <div className={styles.content}>
+          <main className={styles.main}>
+            <article>{children}</article>
+          </main>
+        </div>
       </div>
-      <footer className={styles.footer}>Copyright © {year} ross.fyi</footer>
     </>
   );
 }

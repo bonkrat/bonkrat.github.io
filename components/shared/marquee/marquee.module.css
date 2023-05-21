@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  transform: rotateZ(180deg);
+  background-color: #0070f3;
+}
+
+.content {
+  overflow: hidden;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.content > * {
+  animation: marquee 5s linear infinite;
+  display: inline-flex;
+  padding-right: 10px;
+  font-size: 4rem;
+}
+
+.content span {
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
